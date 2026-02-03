@@ -1,3 +1,5 @@
 .venv/
-scraped_urls.txt
 __pycache__/
+*.txt
+*.md
+.DS_Store
