@@ -137,3 +137,13 @@ with open(ARCHIVE_FILE, 'w', encoding='utf-8') as f:
 
 print(f"\n\n{G}[+] Success! Archive updated with {len(new_entries)} articles.{R}")
 print(f"[*] New count starts at #{start_num}. Current Month: {ARCHIVE_FILE}")
+
+# 7. OFFLINE HTML VIEWER (integrated)
+# Generates/refreshes index.html from the markdown archive for offline use.
+try:
+    from HTMLwhidbey import generate_index_html_from_markdown
+
+    out_html = generate_index_html_from_markdown(ARCHIVE_FILE, "index.html")
+    print(f"[*] Offline viewer updated: {out_html}")
+except Exception as e:
+    print(f"[!] HTML viewer generation failed: {e}")
